@@ -25,7 +25,7 @@ abstract class AbstractReportWriter {
     }
 
     public abstract function write(array $data)
-    : void;
+    : string;
 
     protected function writeHeader(string $cell, string $value)
     : void {
@@ -95,12 +95,14 @@ abstract class AbstractReportWriter {
     }
 
     protected function save(string $name)
-    : void {
+    : string {
 
         $this->autosizeColumns();
 
         $writer = IOFactory::createWriter($this->spreadsheet, "Xlsx");
-        $writer->save("$this->saveLocation/$name.xlsx");
+        $filePath = "$this->saveLocation/$name.xlsx";
+        $writer->save($filePath);
+        return $filePath;
     }
 
     private function autosizeColumns()

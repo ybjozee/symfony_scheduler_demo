@@ -4,28 +4,30 @@
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
-        "php": ">=8.2",
+        "php": ">=8.4",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "doctrine/doctrine-bundle": "^2.13",
-        "doctrine/doctrine-migrations-bundle": "^3.4",
-        "doctrine/orm": "^3.3",
+        "doctrine/doctrine-bundle": "^2.13.2",
+        "doctrine/doctrine-migrations-bundle": "^3.4.1",
+        "doctrine/orm": "^3.3.2",
         "dragonmantank/cron-expression": "^3.4",
-        "fakerphp/faker": "^1.24",
+        "fakerphp/faker": "^1.24.1",
         "symfony/console": "7.2.*",
         "symfony/doctrine-messenger": "7.2.*",
         "symfony/dotenv": "7.2.*",
-        "symfony/flex": "^2",
+        "symfony/flex": "^2.5.0",
         "symfony/framework-bundle": "7.2.*",
+        "symfony/mailer": "7.2.*",
         "symfony/messenger": "7.2.*",
         "symfony/runtime": "7.2.*",
         "symfony/scheduler": "7.2.*",
+        "symfony/sendgrid-mailer": "7.2.*",
         "symfony/yaml": "7.2.*",
         "yectep/phpspreadsheet-bundle": "^1.1"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^4.0",
-        "symfony/maker-bundle": "^1.62"
+        "symfony/maker-bundle": "^1.62.1"
     },
     "config": {
         "allow-plugins": {

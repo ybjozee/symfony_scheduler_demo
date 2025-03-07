@@ -6,27 +6,23 @@ use App\Entity\Product;
 use DateTimeImmutable;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
-final class ProductionReportWriter extends AbstractReportWriter {
+final class ProductionReportWriter extends AbstractReportWriter
+{
 
     public function __construct(
         #[Autowire('%kernel.project_dir%/reports/production')]
         string $saveLocation
     ) {
-
         parent::__construct($saveLocation);
     }
 
-    public function write(array $data)
-    : void {
-
+    public function write(array $data): string {
         $this->writeReportHeader();
         $this->writeReportBody($data);
-        $this->save((new DateTimeImmutable)->format('d_m_Y'));
+        return $this->save((new DateTimeImmutable)->format('d_m_Y'));
     }
 
-    private function writeReportHeader()
-    : void {
-
+    private function writeReportHeader(): void {
         $this->writeHeader("A$this->rowIndex", "Time");
         $this->writeHeader("B$this->rowIndex", "Product");
         $this->writeHeader("C$this->rowIndex", "Quantity");
@@ -34,9 +30,7 @@ final class ProductionReportWriter extends AbstractReportWriter {
     }
 
     /**@param Product[] $data */
-    private function writeReportBody(array $data)
-    : void {
-
+    private function writeReportBody(array $data): void {
         foreach ($data as $product) {
             $this->writeToCell("A$this->rowIndex", $product->createdOn()->format('H:i'));
             $this->writeToCell("B$this->rowIndex", $product->getType()->value);
