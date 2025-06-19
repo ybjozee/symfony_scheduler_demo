@@ -2,6 +2,7 @@
 
 namespace App\Message;
 
-final class GenerateIncidentReport {
+use Symfony\Component\Messenger\Attribute\AsMessage;
 
-}
+#[AsMessage('async')]
+final class GenerateIncidentReport {}
