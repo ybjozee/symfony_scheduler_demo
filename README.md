@@ -14,7 +14,7 @@ This application shows how to use the [Symfony scheduler](https://symfony.com/do
 System Requirements
 ------------
 
-* PHP 8.2 or above
+* PHP 8.4 or above
 * PDO-SQLite PHP extension enabled;
 * [Git][2]
 * [Composer][3]
@@ -66,10 +66,10 @@ symfony console debug:schedule
 symfony console messenger:consume -v async
 ```
 
-7. Consume `scheduler_tasks` transport
+7. Consume `scheduler_default` transport
 
 ```bash
-symfony console messenger:consume -v scheduler_tasks
+symfony console messenger:consume -v scheduler_default
 ```
 
 [2]: https://git-scm.com/
