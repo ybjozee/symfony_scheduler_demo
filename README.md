@@ -44,7 +44,7 @@ Installation
 DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 ```
 
-4. Setup database
+4. Setup database and transports
 
 ```bash
 symfony console doctrine:database:create
