@@ -2,6 +2,7 @@
 
 namespace App\Message;
 
-final class GenerateProductionReport {
+use Symfony\Component\Messenger\Attribute\AsMessage;
 
-}
+#[AsMessage('async')]
+final class GenerateProductionReport {}
